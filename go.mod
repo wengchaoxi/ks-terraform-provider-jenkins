@@ -1,4 +1,4 @@
-module github.com/taiidani/terraform-provider-jenkins
+module github.com/kingsoftgames/terraform-provider-jenkins
 
 go 1.18
 

@@ -1,8 +1,5 @@
 # Terraform Provider
 
-![Unit Tests](https://github.com/taiidani/terraform-provider-jenkins/workflows/Unit%20Tests/badge.svg)
-![Acceptance Tests](https://github.com/taiidani/terraform-provider-jenkins/workflows/Acceptance%20Tests/badge.svg)
-
 - Website: https://www.terraform.io
 - [![Gitter chat](https://badges.gitter.im/hashicorp-terraform/Lobby.png)](https://gitter.im/hashicorp-terraform/Lobby)
 - Mailing list: [Google Groups](http://groups.google.com/group/terraform-tool)
@@ -11,13 +8,13 @@ This is a community provider and is not supported by Hashicorp.
 
 ## Installation
 
-This provider has been published to the Terraform Registry at https://registry.terraform.io/providers/taiidani/jenkins. Please visit the registry for documentation and installation instructions.
+This provider has been published to the Terraform Registry at https://registry.terraform.io/providers/kingsoftgames/jenkins. Please visit the registry for documentation and installation instructions.
 
 ## Contributors
 
 This repository is actively maintained as free time allows for me to work on it. I am accepting Issues and Pull Requests and if you are interested in helping as a maintainer I am open to the possibility. Please allow for 2-3 weeks of turnaround time on your contributions.
 
-The scope of the provider covers the entire (extendable) Jenkins API provided that the https://github.com/bndr/gojenkins client library supports it. I accept submissions for functionality outside of Jenkins Core but expect that the plugin(s) required are _clearly stated_ in the documentation. See [jenkins_credential_vault_approle](https://registry.terraform.io/providers/taiidani/jenkins/latest/docs/resources/credential_vault_approle) for an example of this. I can only support these extensions as much as my own ability to test them allows -- Your Mileage May Vary.
+The scope of the provider covers the entire (extendable) Jenkins API provided that the https://github.com/bndr/gojenkins client library supports it. I accept submissions for functionality outside of Jenkins Core but expect that the plugin(s) required are _clearly stated_ in the documentation. See [jenkins_credential_vault_approle](https://registry.terraform.io/providers/kingsoftgames/jenkins/latest/docs/resources/credential_vault_approle) for an example of this. I can only support these extensions as much as my own ability to test them allows -- Your Mileage May Vary.
 
 ## Developing the Provider
 

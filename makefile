@@ -10,7 +10,7 @@ build:
 	@echo "In order to have Terraform pick this up you will need to add the following to your $$HOME/.terraformrc file:"
 	@echo "  provider_installation {"
 	@echo "    dev_overrides {"
-	@echo "      \"taiidani/jenkins\" = \"$(shell go env GOPATH)/bin\""
+	@echo "      \"kingsoftgames/jenkins\" = \"$(shell go env GOPATH)/bin\""
 	@echo "    }"
 	@echo "    direct {}"
 	@echo "  }"

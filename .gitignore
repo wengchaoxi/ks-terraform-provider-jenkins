@@ -9,3 +9,4 @@ terraform.tfstate*
 vendor
 dist/
 coverage.txt
+.vscode/
