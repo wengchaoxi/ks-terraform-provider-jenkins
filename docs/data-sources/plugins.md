@@ -15,4 +15,6 @@ data "jenkins_plugins" "example" {}
 In addition to all arguments above, the following attributes are exported:
 
 * `id` - Fixed value: `jenkins-data-source-plugins-id`.
-* `list` - The list of the Jenkins plugins.
+* `plugins` - The list of the Jenkins plugins.
+    * `name` - The name of plugin.
+    * `version` - The version of plugin.
