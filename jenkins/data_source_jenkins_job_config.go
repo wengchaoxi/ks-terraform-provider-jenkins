@@ -27,10 +27,10 @@ func dataSourceJenkinsJobConfig() *schema.Resource {
 				Optional:         true,
 				ValidateDiagFunc: validateFolderName,
 			},
-			"node": {
+			"xml_node": {
 				Type:        schema.TypeString,
 				Optional:    true,
-				Description: "The node used to filter the job configuration.",
+				Description: "The xml_node used to filter the job configuration.",
 			},
 			"regex": {
 				Type:        schema.TypeString,
@@ -40,7 +40,7 @@ func dataSourceJenkinsJobConfig() *schema.Resource {
 			"config": {
 				Type:        schema.TypeString,
 				Computed:    true,
-				Description: "The configuration of the job.",
+				Description: "The XML configuration of the job.",
 			},
 		},
 	}
@@ -63,9 +63,9 @@ func dataSourceJenkinsJobConfigRead(ctx context.Context, d *schema.ResourceData,
 		return diag.FromErr(fmt.Errorf("jenkins::job::config - Error get config in job %q: %w", id, err))
 	}
 
-	node := d.Get("node").(string)
-	if node != "" {
-		config, err = filterJobConfigByNode(config, node)
+	xmlNode := d.Get("xml_node").(string)
+	if xmlNode != "" {
+		config, err = filterJobConfigByXMLNode(config, xmlNode)
 		if err != nil {
 			log.Printf("[DEBUG] jenkins::job::config - Job %q: %s", id, err.Error())
 		}
@@ -93,10 +93,10 @@ func filterJobConfigByRegex(config string, regex string) (string, error) {
 	return result[0], nil
 }
 
-func filterJobConfigByNode(config string, node string) (string, error) {
+func filterJobConfigByXMLNode(config string, node string) (string, error) {
 	result, err := filterJobConfigByRegex(config, fmt.Sprintf(`<%s>[^\0]*</%s>|<%s/>`, node, node, node))
 	if err != nil {
-		return "", fmt.Errorf("not found node: %q", node)
+		return "", fmt.Errorf("not found XML node: %q", node)
 	}
 	return result, nil
 }

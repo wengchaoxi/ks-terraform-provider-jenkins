@@ -30,7 +30,7 @@ resource jenkins_job foo {
 
 data jenkins_job_config foo {
 	name = jenkins_job.foo.name
-	node = "properties"
+	xml_node = "properties"
 }`, randString, testDir),
 				Check: resource.ComposeTestCheckFunc(
 					resource.TestCheckResourceAttr("jenkins_job.foo", "id", "/job/tf-acc-test-"+randString),
