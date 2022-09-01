@@ -94,7 +94,7 @@ func filterJobConfigByRegex(config string, regex string) (string, error) {
 }
 
 func filterJobConfigByXMLNode(config string, node string) (string, error) {
-	result, err := filterJobConfigByRegex(config, fmt.Sprintf(`<%s>[^\0]*</%s>|<%s/>`, node, node, node))
+	result, err := filterJobConfigByRegex(config, fmt.Sprintf(`<%s ?.*>[^\0]*</%s>|<%s ?.*/>`, node, node, node))
 	if err != nil {
 		return "", fmt.Errorf("not found XML node: %q", node)
 	}
