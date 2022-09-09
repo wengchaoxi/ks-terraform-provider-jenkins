@@ -54,6 +54,7 @@ func Provider() *schema.Provider {
 			"jenkins_credential_username":      resourceJenkinsCredentialUsername(),
 			"jenkins_credential_vault_approle": resourceJenkinsCredentialVaultAppRole(),
 			"jenkins_folder":                   resourceJenkinsFolder(),
+			"jenkins_folder_template":          resourceJenkinsFolderTemplate(),
 			"jenkins_job":                      resourceJenkinsJob(),
 		},
 
